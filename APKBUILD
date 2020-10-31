@@ -1,20 +1,20 @@
-
+# Maintainer: Junak <junak.pub@gmail.com>
 # Kernel config based on: arch/arm64/configs/defconfig
 
 _flavor="postmarketos-qcom-msm8976"
 pkgname=linux-$_flavor
-pkgver=5.8_rc7
+pkgver=5.9_rc7
 pkgrel=1
-pkgdesc="Mainline kernel fork for Qualcomm MSM8956/76 devices"
+pkgdesc="Mainline kernel fork for Qualcomm MSM8953 devices"
 arch="aarch64"
-url="https://github.com/Kiciuk/linux"
+url="https://github.com/msm8953-mainline/linux"
 license="GPL-2.0-only"
 options="!strip !check !tracedeps pmb:cross-native pmb:kconfigcheck-anbox"
 makedepends="bison findutils flex installkernel openssl-dev perl"
 
 _carch="arm64"
 # Source
-_commit=09da3468ecd82dac57bdec8b0e9a9e1f8b5900f2
+_commit=313a352b8cac46ebd5821349c9aa9d556d263753
 source="
 	$pkgname-$_commit.tar.gz::https://github.com/Kiciuk/linux/archive/$_commit.tar.gz
 	config-$_flavor.$arch
@@ -45,5 +45,5 @@ package() {
 		"$pkgdir"/usr/share/kernel/$_flavor/kernel.release
 }
 
-sha512sums="fdd85784f95fc0d41bd03e3beca72670ea8fe89f08edb8014b21e54a349ee603e98fe28cc62aabf396d26a191db30d6e777e8e653fe0b0136825bc5f24a7f2dd  linux-postmarketos-qcom-msm8976-e79c869542a69491d43eaec84e87577eabb69956.tar.gz
-0d67f8c112dc7525910446dad3edbb67d7122f95f63b6dd038cd7e0e7dd69c55c29b715fa500b3318e63e16dc46725fb61b3fb3a58c514b2507f12d40c8b1b41  config-postmarketos-qcom-msm8976.aarch64"
+sha512sums="0df4264a0a5bfd9c40ff240eb6b4fc753e56fbcae34ea1d22534bedd7314b2b30b16f6f7f79cd8d6a0827a49ccb59aa73fef805188a9766c8a894f9dea42fb71  linux-postmarketos-qcom-msm8976-313a352b8cac46ebd5821349c9aa9d556d263753.tar.gz
+63c9845c890e15b0c75029c314d568539c1e0542bf0df8c9f27c3e0096e1d84f5ca84bf0d526e61fba400223320f6648188627d4b1951f868085ab0956f4e91d  config-postmarketos-qcom-msm8976.aarch64"
