@@ -3,7 +3,7 @@
 
 _flavor="postmarketos-qcom-msm8976"
 pkgname=linux-$_flavor
-pkgver=5.3_rc2
+pkgver=5.10_25
 pkgrel=1
 pkgdesc="Mainline kernel fork for Qualcomm MSM8976 devices"
 arch="aarch64"
@@ -14,9 +14,9 @@ makedepends="bison findutils flex installkernel  openssl-dev perl"
 
 _carch="arm64"
 # Source
-_commit=cdf0bd75763c2ffd0bd61d787c0ea667b3e7fe45
+_commit=986e6d44b89c573c3aa98b12f7f4bec4e9138588
 source="
-	$pkgname-$_commit.tar.gz::https://github.com/Kiciuk/kernel-upstream/archive/$_commit.tar.gz
+	$pkgname-$_commit.tar.gz::https://github.com/Kiciuk/linux/archive/$_commit.tar.gz
 	config-$_flavor.$arch
 "
 builddir="$srcdir/kernel-upstream-$_commit"
@@ -47,5 +47,4 @@ package() {
 
 
 
-sha512sums="935085133c3eca14cbbe48c04235da90fd7ec6fef0ad0fd89df11163635ad9801b16482aa4f88b1811af68826a55881c6ca344c684faa36f7daeddf09d8fce71  linux-postmarketos-qcom-msm8976-cdf0bd75763c2ffd0bd61d787c0ea667b3e7fe45.tar.gz
-620a06f1526f981375bd7b45ea2d40346a5eb333946e5070da98c06b2139fdebece405c309d82633906d92e0f2839f0f960264cb63ace7dc3cdd005dc9dfdd89  config-postmarketos-qcom-msm8976.aarch64"
+
